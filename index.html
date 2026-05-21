@@ -1769,7 +1769,8 @@
 
         <div class="gate-to">Kepada Yth.</div>
         <div class="gate-recipient" id="gateRecipient">Bapak/Ibu/Saudara/i</div>
-<br>
+        <div class="gate-recipient" id="gateRecipientName" style="margin-top: -0.3rem;"></div>
+
         <div class="gate-divider">
           <div class="gate-divider-line"></div>
           <div class="gate-divider-line"></div>
@@ -2722,8 +2723,8 @@
       const p = new URLSearchParams(location.search);
       const gName = p.get("n") || "";
       const pronoun = p.get("p") || "Bapak/Ibu/Saudara/i";
-      const display = gName ? `${pronoun} ${gName}` : pronoun;
-      document.getElementById("gateRecipient").textContent = display;
+      document.getElementById("gateRecipient").textContent = pronoun;
+if (gName) document.getElementById("gateRecipientName").textContent = gName;
       if (document.getElementById("nama"))
         document.getElementById("nama").value = gName;
 
